@@ -1,0 +1,620 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$desktop-2: 1024px;
+$tablet: 768px;
+$mobile-1: 425px;
+$mobile-2: 375px;
+$mobile-3: 320px;
+
+@mixin desktop-2 {
+  @media (max-width: #{$desktop-2}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile-1 {
+  @media (max-width: #{$mobile-1}) {
+    @content;
+  }
+}
+
+@mixin mobile-2 {
+  @media (max-width: #{$mobile-2}) {
+    @content;
+  }
+}
+
+@mixin mobile-3 {
+  @media (max-width: #{$mobile-3}) {
+    @content;
+  }
+}
+
+body {
+  font-family: "Commissioner", sans-serif;
+
+  header {
+    .hero-desktop {
+      max-width: 1440px;
+      width: 100%;
+
+      @include mobile-1 {
+        display: none;
+      }
+    }
+
+    .nav {
+      display: flex;
+      position: relative;
+      top: -19.5rem;
+      justify-content: space-between;
+
+      @include desktop-2 {
+        top: -15.5rem;
+      }
+
+      @include tablet {
+        top: -11rem;
+      }
+
+      .logo {
+        margin-left: 4.5rem;
+
+        @include mobile-1 {
+          margin-left: 1.5rem;
+          margin-top: 12rem;
+          background: transparent;
+          z-index: 1;
+        }
+      }
+
+      .nav-btns {
+        margin-right: 5.5rem;
+
+        @include mobile-1 {
+          display: none;
+        }
+
+        a {
+          padding-left: 1.5rem;
+          text-decoration: none;
+          color: #fff;
+          font-weight: 400;
+          transition: 0.2s all ease-in-out;
+          cursor: pointer;
+        }
+
+        a:hover {
+          color: rgb(207, 207, 207);
+        }
+      }
+
+      .mobile-menu {
+        display: none;
+
+        @include mobile-1 {
+          display: block;
+        }
+
+        .hero-mobile {
+          @include mobile-1 {
+            width: 110%;
+            position: absolute;
+            top: 11rem;
+            left: -2rem;
+          }
+
+          @include mobile-2 {
+            width: 119%;
+          }
+        }
+
+        #burger {
+          @include mobile-1 {
+            position: absolute;
+            top: 12rem;
+            left: 25rem;
+            background: transparent;
+            border: none;
+          }
+
+          @include mobile-2 {
+            left: 23.5rem;
+          }
+        }
+
+        #close {
+          @include mobile-1 {
+            display: none;
+            position: absolute;
+            top: 12rem;
+            left: 25rem;
+            background: transparent;
+            border: none;
+          }
+        }
+      }
+      .menu {
+        display: none;
+
+        @include mobile-1 {
+          display: flex;
+          background: #fff;
+          position: relative;
+          top: 14rem;
+          left: -5rem;
+          z-index: 1;
+          flex-direction: column;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          height: 9rem;
+          width: 55%;
+          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        a {
+          text-decoration: none;
+          margin: 0.6rem 0;
+          border-bottom: 1px solid hsl(0, 0%, 81%);
+          color: #000;
+        }
+      }
+    }
+  }
+  #first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.06);
+    width: 50%;
+    margin: -6rem 20rem 1.5rem;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 4px;
+    padding: 1rem;
+
+    @include desktop-2 {
+      width: 53%;
+      margin: -6rem 18rem 1.5rem;
+    }
+
+    @include tablet {
+      margin: -4rem 10rem 1.5rem;
+      width: 71%;
+    }
+
+    @include mobile-1 {
+      margin: -4rem 0 1.5rem;
+      width: 103%;
+    }
+
+    @include mobile-2 {
+      width: 110.5%;
+    }
+
+    .img-2 {
+      width: 34px;
+      margin-top: -2rem;
+    }
+
+    h1 {
+      margin: 1rem;
+    }
+
+    p {
+      margin-bottom: 0.8rem;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 16rem;
+
+      @include tablet {
+        gap: 8rem;
+      }
+
+      @include mobile-2 {
+        gap: 5rem;
+      }
+
+      #btn-1 {
+        border: none;
+        background-color: hsl(176, 50%, 47%);
+        border-radius: 50px;
+        padding: 0.7rem 1rem;
+        color: white;
+        font-size: 13px;
+        transition: 0.2s all ease-in-out;
+        cursor: pointer;
+
+        @include desktop-2 {
+          width: 105%;
+        }
+      }
+
+      #btn-1:hover {
+        background-color: hsl(176, 72%, 28%);
+      }
+
+      #btn-2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: hsl(0, 0%, 48%);
+        font-weight: 600;
+        border: none;
+        border-radius: 50px;
+        padding: 0.5rem;
+        transition: 0.2s all ease-in-out;
+        cursor: pointer;
+
+        @include tablet {
+          width: 120%;
+        }
+
+        img {
+          width: 25%;
+          margin-left: -0.8rem;
+        }
+      }
+
+      #btn-2:hover {
+        background-color: hsl(0, 0%, 81%);
+      }
+    }
+  }
+
+  #second {
+    margin-top: 10rem;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.06);
+    width: 50%;
+    margin: 8rem 20rem 1.5rem;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 1rem 2.5rem;
+
+    @include desktop-2 {
+      margin: 8rem 18rem 1.5rem;
+      width: 53%;
+    }
+
+    @include tablet {
+      margin: 12rem 11.5rem 1.5rem;
+      width: 61%;
+    }
+
+    @include mobile-1 {
+      margin: 12rem 1.5rem 1.5rem;
+      width: 92%;
+    }
+
+    @include mobile-2 {
+      width: 99%;
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+
+      @include mobile-1 {
+        display: block;
+        margin-left: 5rem;
+      }
+
+      @include mobile-2 {
+        margin-left: 3rem;
+      }
+
+      .stats-block {
+        border-right: 1px solid hsl(0, 0%, 48%);
+        padding-right: 1.3rem;
+
+        @include mobile-1 {
+          border-right: none;
+          padding-right: 0;
+        }
+      }
+
+      .big-number {
+        font-size: 26px;
+        font-weight: 600;
+
+        @include mobile-1 {
+          margin-left: 1.7rem;
+        }
+      }
+
+      .small-number {
+        @include mobile-1 {
+          margin-left: 1.4rem;
+        }
+      }
+    }
+    #progress-bar {
+      margin: 2rem auto;
+      width: 100%;
+    }
+  }
+
+  #third {
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.06);
+    width: 54%;
+    margin: 3rem 17rem;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 1rem 2.5rem;
+
+    @include tablet {
+      width: 64%;
+      margin: 3rem 10rem;
+    }
+
+    @include mobile-1 {
+      width: 88%;
+      margin: 3rem 3rem;
+    }
+
+    @include mobile-2 {
+      width: 92%;
+    }
+
+    .text {
+      h2 {
+        margin: 1.5rem 0;
+      }
+
+      p {
+        color: hsl(0, 0%, 48%);
+        line-height: 1.8rem;
+      }
+    }
+
+    .card {
+      border: 1px solid hsl(0, 0%, 88%);
+      border-radius: 10px;
+      padding: 2rem 1.2rem;
+      margin: 1.2rem 0;
+
+      @include mobile-2 {
+        margin: 1.2rem -2rem;
+        width: 109%;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.8rem;
+
+        .left {
+          font-weight: 600;
+          color: #000;
+        }
+
+        .right {
+          color: hsl(176, 50%, 47%);
+          font-weight: 500;
+        }
+      }
+      p {
+        color: hsl(0, 0%, 48%);
+        line-height: 1.6rem;
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.8rem;
+
+        b {
+          color: #000;
+          margin-right: 0.5rem;
+          font-size: 24px;
+        }
+
+        button {
+          border: none;
+          background-color: hsl(176, 50%, 47%);
+          border-radius: 50px;
+          padding: 0.7rem 1rem;
+          color: white;
+          font-size: 13px;
+          transition: 0.2s all ease-in-out;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: hsl(176, 72%, 28%);
+        }
+      }
+    }
+
+    .opacity {
+      opacity: 0.5;
+
+      button {
+        background-color: hsl(0, 0%, 48%) !important;
+        cursor: not-allowed !important;
+      }
+    }
+  }
+}
+
+.modal {
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.1);
+  width: 54%;
+  margin: 3rem 17rem;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 1rem 2.5rem;
+  position: absolute;
+  top: 12rem;
+  display: none;
+
+  button {
+    background: transparent;
+    border: none;
+    margin-left: 36rem;
+    margin-top: 1.2rem;
+    cursor: pointer;
+  }
+
+  .subtitle {
+    color: hsl(0, 0%, 48%);
+    margin-top: 1rem;
+    font-size: 15px;
+  }
+
+  .card-modal {
+    margin-top: 1rem;
+    border: 1px solid hsl(0, 0%, 88%);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+
+    .top-modal {
+      display: flex;
+      justify-content: space-between;
+
+      .green {
+        flex-grow: 1;
+        margin-left: 0.5rem;
+        color: hsl(176, 50%, 47%);
+      }
+
+      .right-modal {
+        span {
+          font-weight: 600;
+          margin-right: 0.3rem;
+          font-size: 22px;
+        }
+      }
+    }
+
+    .bottom-modal {
+      .text {
+        margin-top: 1.5rem;
+      }
+    }
+    .pledgeBtn1 {
+      margin-left: 11rem;
+      background: hsl(176, 50%, 47%);
+      padding: 1rem 1.2rem;
+      border-radius: 20px;
+    }
+
+    .pledgeBtn2 {
+      margin-left: 11rem;
+      background: hsl(176, 50%, 47%);
+      padding: 1rem 1.2rem;
+      border-radius: 20px;
+    }
+
+    .pledgeBtn3 {
+      margin-left: 11rem;
+      background: hsl(176, 50%, 47%);
+      padding: 1rem 1.2rem;
+      border-radius: 20px;
+    }
+  }
+
+  .opacity {
+    opacity: 0.5;
+
+    button {
+      background-color: hsl(0, 0%, 48%) !important;
+      cursor: not-allowed !important;
+    }
+  }
+
+  .pledgeBtn {
+    background-color: hsl(176, 50%, 47%);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    margin-left: 14rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .pledgeBtn:hover {
+    background-color: hsl(176, 72%, 28%);
+  }
+
+  .inputText {
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding: 0.1rem;
+  }
+}
+
+.thanksDisplay {
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.1);
+  width: 54%;
+  margin: 3rem 17rem;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 1rem 2.5rem;
+  position: absolute;
+  top: 15rem;
+  display: none;
+
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      margin-top: 2rem;
+      font-size: 23px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    p {
+      margin-top: 1rem;
+      margin-left: 8rem;
+      color: hsl(0, 0%, 48%);
+      line-height: 2rem;
+      margin: 0 5rem;
+    }
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    button {
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 20px;
+      background-color: hsl(176, 50%, 47%);
+      color: #fff;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: hsl(176, 72%, 28%);
+    }
+  }
+}
